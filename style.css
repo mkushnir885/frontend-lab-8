@@ -1,0 +1,709 @@
+html {
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+*,
+*::after {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: inherit;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    min-height: 50rem;
+    flex-direction: column;
+    background-image: url("./images/cat-intro.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+.navbar {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 2;
+    margin: 1rem 6rem;
+    cursor: pointer;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.65rem;
+    font-weight: bold;
+}
+
+.navbar .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.navbar .menu a {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu a:hover {
+    color: rgb(255, 199, 44);
+}
+
+.menu .has-dropdown {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.menu .has-dropdown>a {
+    display: flex;
+    align-items: center;
+}
+
+.menu .dropdown {
+    position: absolute;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    background-color: rgb(34, 28, 24);
+    box-shadow: 0 0.1rem 0.25rem rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+    padding: 0;
+    display: none;
+    min-width: 7.5rem;
+    z-index: 3;
+}
+
+.dropdown li {
+    text-align: left;
+}
+
+.dropdown a {
+    padding: 0.25rem 0.5rem;
+    display: block;
+}
+
+.dropdown a:hover {
+    background: #3f3f3f;
+}
+
+.menu .has-dropdown:hover .dropdown {
+    display: block;
+}
+
+.menu .has-dropdown>a::after {
+    content: '';
+    display: inline-block;
+    width: 0.25rem;
+    height: 0.4rem;
+    margin-left: 0.4rem;
+    background-image: url('./images/arrow.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(90deg);
+    filter: invert(1);
+    transition: transform 0.3s ease;
+}
+
+.menu .has-dropdown:hover>a::after {
+    transform: rotate(90deg) rotateY(180deg);
+}
+
+header .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 20;
+    position: relative;
+}
+
+.center .text-container {
+    margin-bottom: 7%;
+    margin-left: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.center .text-container * {
+    margin: 0;
+}
+
+.center .big-text {
+    text-transform: uppercase;
+    color: white;
+    font-size: 3.25rem;
+    font-weight: bold;
+}
+
+.center .description {
+    color: white;
+    letter-spacing: 0.025rem;
+}
+
+.center .find-pet-btn {
+    border: none;
+    background-color: white;
+    text-transform: uppercase;
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    width: 12.5%;
+    font-weight: bold;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    ;
+}
+
+.center .find-pet-btn:hover {
+    background-color: rgb(255, 199, 44);
+}
+
+.center .pet-slider {
+    position: absolute;
+    height: 75%;
+    width: 90%;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-slider .pet-slides {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pet-slide {
+    display: inline-block;
+}
+
+.pet-slide img {
+    width: 100%;
+}
+
+.sections {
+    display: flex;
+    margin-top: 3rem;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.marker {
+    width: 0.6rem;
+    height: 0.6rem;
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+    transition: background-color 0.3s ease;
+}
+
+.marker.open {
+    background-color: rgb(255, 199, 44);
+}
+
+.marker:hover {
+    background-color: rgb(226, 193, 3);
+}
+
+main {
+    margin-top: 22.5rem;
+}
+
+.adoption-form-invitation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem 6rem;
+    background-color: #faf9ff;
+    align-items: center;
+
+}
+
+.adoption-form-invitation p {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-left: 2rem;
+}
+
+.adoption-form-invitation a {
+    padding: 0.75rem 1.5rem;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(255, 199, 44);
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.globally-connected {
+    display: flex;
+    flex-direction: row;
+    margin: 6rem 0;
+}
+
+.globally-connected-img {
+    display: flex;
+    flex: 1.25;
+}
+
+.globally-connected-img img {
+    width: 100%;
+}
+
+.globally-connected .text-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 1.5rem;
+    gap: 1.25rem
+}
+
+.globally-connected .title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.globally-connected .subtitle {
+    color: rgb(121, 121, 121);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.globally-connected .description {
+    color: rgb(121, 121, 121);
+    margin: 0;
+}
+
+.globally-connected .get-details {
+    text-transform: uppercase;
+    padding: 0 0;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(255, 199, 44);
+    padding: 0.75rem 1.5rem;
+}
+
+.video-animals {
+    display: flex;
+    justify-content: center;
+}
+
+.video-animals .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15rem;
+    align-items: center;
+}
+
+.video-animals .container .video-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 15rem;
+}
+
+.video-animals .container video {
+    width: 100%;
+}
+
+video::-webkit-media-controls-timeline {
+    display: none;
+}
+
+video::-webkit-media-controls-volume-slider {
+    display: none;
+}
+
+video::-webkit-media-controls-mute-button {
+    display: none;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+
+video::-webkit-media-controls-current-time-display {
+    display: none;
+}
+
+video::-webkit-media-controls-play-button {
+    transform: scale(2);
+}
+
+video::-webkit-media-controls-time-remaining-display {
+    display: none;
+}
+
+.video-animals .container .text-container {
+    margin: 1rem 15rem;
+}
+
+.video-animals .title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.video-animals .description {
+    text-align: center;
+    color: rgb(121, 121, 121);
+    margin: 0;
+}
+
+.process-to-adopt {
+    display: flex;
+    background-color: #faf9ff;
+    margin: 5.5rem 0;
+}
+
+.process-to-adopt .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 6rem 6rem;
+}
+
+.process-to-adopt .steps-container {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.process-to-adopt .step-title {
+    font-weight: bold;
+}
+
+.process-to-adopt .title,
+.testimonials .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.process-to-adopt .subtitle,
+.process-to-adopt .step-description,
+.testimonials .subtitle,
+.testimonial .text,
+.testimonial .position {
+    color: rgb(121, 121, 121);
+}
+
+.process-to-adopt img {
+    width: 10%
+}
+
+.testimonials {
+    display: flex;
+}
+
+.testimonials .section {
+    display: flex;
+    flex-direction: row;
+    margin: 2.5rem 5.5rem;
+    gap: 1.25rem;
+}
+
+.testimonials .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonials .testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #faf9ff;
+    ;
+    border-radius: 0.25rem;
+    padding: 1.25rem;
+}
+
+.testimonials .testimonial img {
+    border-radius: 50%;
+    width: 20%;
+}
+
+.testimonial .name {
+    font-weight: bold;
+    margin: 0;
+}
+
+.testimonial .text {
+    margin: 1.75rem 0;
+}
+
+.testimonial .position {
+    margin-top: 0;
+}
+
+.volunteer-invitation {
+    display: flex;
+    min-height: 35rem;
+    background-image: url('./images/kid-and-dog.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 10rem;
+    position: relative;
+    justify-content: center;
+}
+
+.volunteer-invitation::after {
+    position: absolute;
+    content: "";
+    background-color: rgb(255, 187, 0);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    filter: opacity(70%) blur(30px);
+    z-index: 2;
+}
+
+.volunteer-invitation .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+    margin: 10rem 15rem;
+    gap: 1.5rem;
+    color: white;
+    font-weight: 500;
+}
+
+.volunteer-invitation .container * {
+    margin: 0;
+}
+
+.volunteer-invitation .title {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.volunteer-invitation .btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.volunteer-invitation a {
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+}
+
+@media (max-width: 1400px) {
+    html {
+        font-size: 17px;
+    }
+
+    .video-animals .container .video-container {
+        display: flex;
+        justify-content: center;
+        margin: 0 7rem;
+    }
+
+    .video-animals .container .text-container {
+        margin: 1rem 7rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 14.45px;
+    }
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 7.5px;
+    }
+
+    .menu a,
+    .center .description,
+    .center .find-pet-btn,
+    .globally-connected .subtitle,
+    .globally-connected .description,
+    .video-animals .text-container *,
+    .process-to-adopt .subtitle,
+    .process-to-adopt .step-description,
+    .process-to-adopt .step-title,
+    .testimonials .subtitle,
+    .testimonials .text,
+    .testimonials .name,
+    .testimonials .position,
+    .volunteer-invitation .description,
+    .adoption-form-invitation a,
+    .volunteer-invitation .btns a {
+        font-size: 1.15rem;
+    }
+
+    .navbar .logo {
+        font-size: 2rem;
+    }
+
+    .center .big-text {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 6px;
+    }
+
+    .navbar .menu {
+        flex-wrap: wrap;
+    }
+
+    .menu a,
+    .center .description,
+    .center .find-pet-btn,
+    .globally-connected .subtitle,
+    .globally-connected .description,
+    .globally-connected .get-details,
+    .video-animals .text-container *,
+    .process-to-adopt .subtitle,
+    .process-to-adopt .step-description,
+    .process-to-adopt .step-title,
+    .testimonials .subtitle,
+    .testimonials .text,
+    .testimonials .name,
+    .testimonials .position,
+    .volunteer-invitation .description,
+    .adoption-form-invitation a,
+    .volunteer-invitation .btns a {
+        font-size: 1.5rem;
+    }
+
+    .adoption-form-invitation p,
+    .video-animals .title,
+    .process-to-adopt .title,
+    .testimonials .title {
+        font-size: 2.3rem;
+    }
+
+    .navbar .logo {
+        font-size: 3rem;
+    }
+
+    .center .big-text {
+        font-size: 5rem;
+    }
+
+    .center .find-pet-btn {
+        width: 20%;
+    }
+}
+
+@media (max-width: 430px) {
+    html {
+        font-size: 4px;
+    }
+
+    .menu a,
+    .center .description,
+    .center .find-pet-btn,
+    .globally-connected .subtitle,
+    .globally-connected .description,
+    .globally-connected .get-details,
+    .video-animals .text-container *,
+    .process-to-adopt .subtitle,
+    .process-to-adopt .step-description,
+    .process-to-adopt .step-title,
+    .testimonials .subtitle,
+    .testimonials .text,
+    .testimonials .name,
+    .testimonials .position,
+    .volunteer-invitation .description,
+    .adoption-form-invitation a,
+    .volunteer-invitation .btns a {
+        font-size: 1.8rem;
+    }
+
+    .navbar .logo {
+        font-size: 3rem;
+    }
+
+    .center .big-text {
+        font-size: 6rem;
+    }
+
+    .center .find-pet-btn {
+        width: 20%;
+    }
+
+    header {
+        min-height: 70rem;
+    }
+
+    .marker {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}
+
+@media (max-width: 295px) {
+    html {
+        font-size: 1px;
+    }
+}
+
+@media (min-width: 2400px) {
+    .sections {
+        margin-top: 3rem;
+    }
+}
+
+@media (min-width: 2560px) {
+    html {
+        font-size: 23px;
+    }
+}
+
+@media (min-width: 3840px) {
+    html {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 5760px) {
+    html {
+        font-size: 40px;
+    }
+}
